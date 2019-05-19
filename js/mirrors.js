@@ -22,53 +22,61 @@ $(function() {
 
 
 
-// JSON TEST FROM HERE
+	// JSON TEST FROM HERE
+	var fancyslides;
+	$.ajax({
+	  type: 'GET',
+	  url: 'data.json',
+	  data: {get_param: 'value'},
+	  dataType: 'json',
+	  success: function (data) {
+	    fancyslides = data
+		$("#fs_headline").text(fancyslides.fancyslides[0].headline);
+		$("#fs_subhead").text(fancyslides.fancyslides[0].subhead);
+		// console.log(fancyslides);
+		// console.log(fancyslides.fancyslides[0].headline);
+		// console.log(fancyslides.fancyslides[1].headline);
+		// console.log(fancyslides.fancyslides[2].headline);
+	  }
+	});
 
 
-
-var fancyslides;
-$.ajax({
-  type: 'GET',
-  url: 'data.json',
-  data: {get_param: 'value'},
-  dataType: 'json',
-  success: function (data) {
-    fancyslides = data
-    console.log(fancyslides);
-	console.log(fancyslides.fancyslides[0].headline);
-	console.log(fancyslides.fancyslides[1].headline);
-	console.log(fancyslides.fancyslides[2].headline);
-  }
-});
-
-
-
-
-
-
-
-
-// JSON TEST END HERE
-
-
-
+	var fs_num = 0;
+	var fs_total = 2;
 
 
 	$("#fs_nav_left").click(function(){
 		console.log('fancyslide left');
-		console.log(fancyslides.fancyslides[0].headline);
-		console.log(fancyslides.fancyslides[1].headline);
-		console.log(fancyslides.fancyslides[2].headline);
+		fs_num = fs_num - 1;
+		if (fs_num <= -1) {
+			fs_num = fs_total;
+		}
+		console.log(fs_num);
+		change_fs(fs_num);
+		// console.log(fancyslides.fancyslides[0].headline);
+		// console.log(fancyslides.fancyslides[1].headline);
+		// console.log(fancyslides.fancyslides[2].headline);
 	});
 	$("#fs_nav_right").click(function(){
 		console.log('fancyslide right');
-		console.log(fancyslides.fancyslides[0].headline);
-		console.log(fancyslides.fancyslides[1].headline);
-		console.log(fancyslides.fancyslides[2].headline);
+		fs_num = fs_num + 1;
+		if (fs_num == fs_total + 1) {
+			fs_num = 0;
+		}
+		console.log(fs_num);
+		change_fs(fs_num);
+		// console.log(fancyslides.fancyslides[0].headline);
+		// console.log(fancyslides.fancyslides[1].headline);
+		// console.log(fancyslides.fancyslides[2].headline);
 	});
 
 
-
+	function change_fs(num) {
+		console.log(fancyslides.fancyslides[num].headline);
+		console.log(fancyslides.fancyslides[num].subhead);
+		$("#fs_headline").text(fancyslides.fancyslides[num].headline);
+		$("#fs_subhead").text(fancyslides.fancyslides[num].subhead);
+	}
 
 
 

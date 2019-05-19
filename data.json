@@ -2,15 +2,15 @@
    "fancyslides":[
       {
          "headline":"Headline number 1",
-         "subhead":"Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here."
+         "subhead":"Subhead 1 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here."
       },
       {
          "headline":"Headline number 2",
-         "subhead":"Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here."
+         "subhead":"Subhead 2 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here."
       },
       {
          "headline":"Headline number 3",
-         "subhead":"Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here."
+         "subhead":"Subhead 3 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here."
       }
    ]
 }
