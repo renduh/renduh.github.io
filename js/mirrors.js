@@ -33,6 +33,9 @@ $(function() {
 	    fancyslides = data
 		$("#fs_headline").text(fancyslides.fancyslides[0].headline);
 		$("#fs_subhead").text(fancyslides.fancyslides[0].subhead);
+		$("#fs_bg").css('background', fancyslides.fancyslides[0].background);
+		//$("#fs_content").html(fancyslides.fancyslides[0].content);
+		$('#fs_content').load(fancyslides.fancyslides[0].content);
 		// console.log(fancyslides);
 		// console.log(fancyslides.fancyslides[0].headline);
 		// console.log(fancyslides.fancyslides[1].headline);
@@ -76,6 +79,9 @@ $(function() {
 		console.log(fancyslides.fancyslides[num].subhead);
 		$("#fs_headline").text(fancyslides.fancyslides[num].headline);
 		$("#fs_subhead").text(fancyslides.fancyslides[num].subhead);
+		$("#fs_bg").css('background', fancyslides.fancyslides[num].background);
+		//$("#fs_content").html(fancyslides.fancyslides[num].content);
+		$('#fs_content').load(fancyslides.fancyslides[num].content);
 	}
 
 

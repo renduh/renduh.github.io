@@ -79,3 +79,13 @@ html, body {
 	max-height:0px;
 	overflow:hidden;
 }
+
+#fs_content {
+	width:98%;
+	max-width:600px;
+	margin:0 auto 0;
+}
+
+#fs_content h1 {
+	font-family:sans-serif;
+}
