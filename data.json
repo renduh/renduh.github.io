@@ -17,6 +17,12 @@
          "subhead":"Subhead 3 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here.",
          "background":"#1a2930",
          "content":"projects/project003.html"
+      },
+      {
+         "headline":"Headline number 4",
+         "subhead":"Subhead 4 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here.",
+         "background":"#373737",
+         "content":"projects/project004.html"
       }
    ]
 }

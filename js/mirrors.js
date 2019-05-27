@@ -45,7 +45,7 @@ $(function() {
 
 
 	var fs_num = 0;
-	var fs_total = 2;
+	var fs_total = 3;
 
 
 	$("#fs_nav_left").click(function(){
