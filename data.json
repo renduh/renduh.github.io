@@ -1,25 +1,25 @@
 {
    "fancyslides":[
       {
-         "headline":"Headline number 1",
+         "headline":"Aberfan and other Shorthand stories",
          "subhead":"Subhead 1 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here.",
          "background":"#233237",
          "content":"projects/project001.html"
       },
       {
-         "headline":"Headline number 2",
+         "headline":"Damned - The Mirror",
          "subhead":"Subhead 2 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here.",
          "background":"#1e392a",
          "content":"projects/project002.html"
       },
       {
-         "headline":"Headline number 3",
+         "headline":"The Wigan Pier Project - The Mirror",
          "subhead":"Subhead 3 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here.",
          "background":"#1a2930",
          "content":"projects/project003.html"
       },
       {
-         "headline":"Headline number 4",
+         "headline":"Sport graphic maker - Reach",
          "subhead":"Subhead 4 - Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here. Longer description goes in here.",
          "background":"#373737",
          "content":"projects/project004.html"
