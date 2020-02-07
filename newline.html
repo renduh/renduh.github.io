@@ -1,0 +1,217 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+  <title>New line</title>
+
+  <style>
+  html, body {
+  	width:100%;
+  	height:100%;
+  	padding:0;
+  	margin:0;
+  }
+  .wrapper {
+  	position:relative;
+  	width:100%;
+  	min-height:100%;
+  	max-width:800px;
+  }
+
+  .headline-lines {
+  	position:relative;
+  	margin:5px 0;
+  	overflow:hidden;
+  }
+  .single-lines {
+  	position:relative;
+  	top:30px;
+  }
+
+  #headlinemeasure, #headline, 
+  #subheadmeasure, #subhead {
+  	display:block;
+  	background:transparent;
+  	margin:10px;
+  	font-family:sans-serif;
+  	font-weight:bold;
+  	font-size:44px;
+  }
+  #headlinemeasure, 
+  #subheadmeasure {
+  	position:absolute;
+  	opacity:0;
+    text-transform:uppercase;
+  }
+  #headline, 
+  #subhead {
+  	position:relative;
+  }
+  #headline {
+  	text-transform:uppercase;
+  }
+  #subhead {
+  	text-transform:uppercase;
+  	color:#ccc;
+  }
+
+  #titles {
+  	width:100%;
+  	position:absolute;
+  	top:50%;
+  	left:30px;
+  }
+
+  #background {
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+
+
+
+  </style>
+
+</head>
+
+<body>
+
+<div id="background">background</div>
+
+
+<div class="wrapper">
+	<div id="titles">
+		<div id="headlinemeasure">measure</div>
+		<div id="headline"></div>
+		<div id="subheadmeasure">measure</div>
+		<div id="subhead"></div>
+	</div>
+</div>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+
+
+function removeLines(headline, div, measurediv) {
+	// Remove current headline
+	$(div + " .headline-lines .single-lines").animate({top: "-50px"}, 300, 'linear');
+	// Add new string
+	setTimeout(function(){ 
+		splitLines(headline, div, measurediv);
+	}, 400);
+}
+
+function splitLines(headline, div, measurediv) {
+    // Get height of measuring div with one line in it then clear the div
+    var originalHeight = $(measurediv).height();
+    $(measurediv).text('');
+    // Array to put our seperate lines into
+    var allLines = [];
+    // Split string into words. Put each word into measuring div and check if height has changes which tells us it is on a new line
+    $.each( headline.split(" "), function(){
+    	var textBeforeAdd = $(measurediv).text();
+        $(measurediv).append(this + ' ');
+	    var newHeight = $(measurediv).height();
+	    if (originalHeight !== newHeight) {
+	    	$(measurediv).text('');
+	    	$(measurediv).append(this + ' ');
+	    	allLines.push(textBeforeAdd);
+	    } 
+    });
+    // Check for words on last line, if there are any add them to the array
+    if ( $(measurediv).text() !== '' ) {
+    	allLines.push( $(measurediv).text() );
+    }
+    console.log(allLines);
+    // Clear div that will hold our final text
+    $(div).text('');
+    // Add our lines array entries to the display div
+    for(var i = 0; i< allLines.length; i++){
+		$('<div/>', {
+		    "class": 'headline-lines',
+		    "html": '<div class="single-lines">' + allLines[i] + '</div>'
+		}).appendTo(div);
+    }	
+    animateLines(div);
+}
+
+function animateLines(div) {
+    // Animate final lines
+    $(div + " .headline-lines .single-lines").animate({top: "0px"}, 300, 'linear');
+}
+
+
+
+
+
+function changeBackground(img) {
+  $('#background').text(img);
+}
+
+
+
+
+
+var headline_array = ["This is a long string project headline", "This is two lines long headline two", "This is two lines long headline Head 3", "This is two lines long headline Head 4 head headh head"];
+var subhead_array = ["Subhead 1 is longer and longer and longer and longer", "Subhead 2 is longer and longer and longer and longer", "Subhead 3 is longer and longer and longer and longer", "Subhead 4 is longer and longer and longer and longer"];
+var image_array = ["Image 1", "Image 2", "Image 3", "Image 4"];
+
+
+
+
+
+
+
+$( document ).ready(function() {
+	// splitLines("This is another quite long string for a project headline but it will be multiline one");
+	var i = 0;
+	(function loop_headlines() {
+	    // console.log(i);
+	    // console.log(headline_array[i]);
+	    removeLines(headline_array[i], '#headline', '#headlinemeasure');
+      removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
+      changeBackground(image_array[i]);
+	    if (++i < headline_array.length) {
+	        setTimeout(loop_headlines, 3000);
+	    } else {
+	    	i = 0;
+	    	setTimeout(loop_headlines, 3000);
+	    }
+	})();
+
+
+	// var sh = 0;
+	// (function loop_subheads() {
+	//     console.log(sh);
+	//     console.log(subhead_array[sh]);
+	//     removeLines(subhead_array[sh], '#subhead', '#subheadmeasure');
+	//     if (++sh < subhead_array.length) {
+	//         setTimeout(loop_subheads, 3000);
+	//     } else {
+	//     	sh = 0;
+	//     	setTimeout(loop_subheads, 3000);
+	//     }
+	// })();
+
+
+
+
+
+
+});
+
+
+
+</script>
+</body>
+</html>
