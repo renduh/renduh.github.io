@@ -12,7 +12,8 @@
   	width:100%;
   	height:100%;
   	padding:0;
-  	margin:0;
+  	margin:0;    
+    background:#000;
   }
   .wrapper {
   	position:relative;
@@ -52,6 +53,7 @@
   }
   #headline {
   	text-transform:uppercase;
+    color:#fff;
   }
   #subhead {
   	text-transform:uppercase;
@@ -69,6 +71,29 @@
     position:absolute;
     top:0;
     left:0;
+    color:#fff;
+    width:100%;
+    height:100%;
+    padding:0;
+    margin:0; 
+    overflow:hidden;
+/*    background:url('img/blue.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
+  }
+  #slide-image {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;    
+  }
+  #slide-image img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
   }
 
 
@@ -80,7 +105,11 @@
 
 <body>
 
-<div id="background">background</div>
+<div id="background">
+  <div id="slide-image">
+    <img src="img/blue.jpg">
+  </div>
+</div>
 
 
 <div class="wrapper">
@@ -155,7 +184,13 @@ function animateLines(div) {
 
 
 function changeBackground(img) {
-  $('#background').text(img);
+  // $('#background').text(img);
+  // $('#background').css("background", "url('" + img + "') no-repeat center center fixed");
+  $('#slide-image').html('<img src="' + img + '">');
+
+
+
+
 }
 
 
@@ -164,7 +199,7 @@ function changeBackground(img) {
 
 var headline_array = ["This is a long string project headline", "This is two lines long headline two", "This is two lines long headline Head 3", "This is two lines long headline Head 4 head headh head"];
 var subhead_array = ["Subhead 1 is longer and longer and longer and longer", "Subhead 2 is longer and longer and longer and longer", "Subhead 3 is longer and longer and longer and longer", "Subhead 4 is longer and longer and longer and longer"];
-var image_array = ["Image 1", "Image 2", "Image 3", "Image 4"];
+var image_array = ["img/black.jpg", "img/aberfan.jpg", "img/black.jpg", "img/blue.jpg"];
 
 
 
