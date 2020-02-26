@@ -190,6 +190,20 @@
     left:0;
     z-index:999;
   }
+  #story-line {
+    position:absolute;
+    width:calc( 100% - 20px);
+    height:2px;
+    top:10px;
+    left:10px;
+    background:transparent;
+    z-index:1000;
+  }
+  .story-line-single-fill {
+    background:#fff;
+    height:100%;
+    width:0%;
+  }
 
 
 
@@ -231,6 +245,8 @@
 
 <div id="project-next"></div>
 <div id="project-previous"></div>
+
+<div id="story-line"></div>
 
 
 
@@ -335,12 +351,6 @@ function changeBackground(img,img_mobile) {
 
 
 
-
-
-
-
-
-
 var headline_array = ["Aberfan & other Shorthand stories", "Damned", "The Wigan Pier Project", "Image maker tools"];
 var subhead_array = ["Longform stories for Reach regionals made with Shorthand", "Longform website for The Mirror", "Special project website for The Mirror", "Software developed for Reach regionals"];
 var image_array = ["img/aberfan.jpg", "img/damned.jpg", "img/wiganpier.jpg", "img/stories-maker.jpg"];
@@ -354,19 +364,57 @@ var image_array_mobile = ["img/aberfan-mobile.jpg", "img/damned-mobile.jpg", "im
 var i;
 var totalprojects;
 var projectloop;
-var looptime = 3000;
+var looptime = 6000;
 
 $( document ).ready(function() {
 	i = 0;
+  add_storylines();
   loop_headlines();
-
 });
 
 
 
+function add_storylines() {
+  var numofprojects = headline_array.length;
+  var width = 100 / numofprojects;
+  for (x = 0; x < numofprojects; x++) {
+    $('<div/>', {
+        class: '.story-line-single',
+        html: '<div id="story-' + x + '" class="story-line-single-fill"></div>',
+        css: {
+          position:'relative',
+          float:'left',
+          width: 'calc( ' + width + '% - 4px )',
+          height:'100%',
+          background:'#ccc',
+          margin:'0 2px'
+        }
+    }).appendTo('#story-line');
+  }
+}
+
+
+
+function animate_storylines(i) {
+  var totalprojects = headline_array.length;
+  for (var x = 0; x < totalprojects; x++) {
+    console.log(x);
+    $( '#story-' + (x) ).finish();
+    $( '#story-' + (x) ).css({width: "0%"});
+  }
+
+  for (var x = 0; x < i; x++) {
+    $( '#story-' + (x) ).css({width: "100%"});
+  }
+
+  $( '#story-' + (i) ).animate({width: "100%"}, looptime);
+}
+
 
 
 function loop_headlines() {
+  // console.log(i);
+    animate_storylines(i);
     totalprojects = headline_array.length;
     removeLines(headline_array[i], '#headline', '#headlinemeasure');
     removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
@@ -377,7 +425,6 @@ function loop_headlines() {
         i = 0;
         projectloop = setTimeout(loop_headlines, looptime);
     }
-    console.log(i);
 }
 
 
@@ -390,6 +437,7 @@ $("#project-next").click(function(){
   // console.log(totalprojects);
   clearTimeout(projectloop);
 
+animate_storylines(i);
   removeLines(headline_array[i], '#headline', '#headlinemeasure');
   removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
   changeBackground(image_array[i],image_array_mobile[i]);
@@ -407,10 +455,10 @@ $("#project-next").click(function(){
 
 
 $("#project-previous").click(function(){
-  console.log('previous project');
-  console.log(i);
-  // console.log(totalprojects);
+  // console.log('previous project');
+  // console.log(i);
   clearTimeout(projectloop);
+
 
   i = i - 2; 
   console.log(i);
@@ -424,7 +472,7 @@ $("#project-previous").click(function(){
       i = totalprojects - 2;
   }
 
-
+animate_storylines(i);
   removeLines(headline_array[i], '#headline', '#headlinemeasure');
   removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
   changeBackground(image_array[i],image_array_mobile[i]);
