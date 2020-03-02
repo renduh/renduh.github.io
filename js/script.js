@@ -1,261 +1,3 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport" />
-
-  <title>New line</title>
-
-  <style>
-  html, body {
-  	width:100%;
-  	height:100%;
-  	padding:0;
-  	margin:0;    
-    background:#000;
-  }
-  .wrapper {
-  	position:relative;
-  	width:100%;
-  	min-height:100%;
-  	max-width:800px;
-    z-index:20;
-  }
-
-  .headline-lines {
-  	position:relative;
-  	margin:5px 0;
-  	overflow:hidden;
-  }
-  .single-lines {
-  	position:relative;
-  	top:30px;
-  }
-
-  #headlinemeasure, #headline {
-    display:block;
-    background:transparent;
-    margin:10px;
-    font-family:sans-serif;
-    font-weight:bold;
-    font-size:34px;
-    line-height:30px;
-  }
-
-  #subheadmeasure, #subhead {
-    display:block;
-    background:transparent;
-    margin:10px;
-    font-family:sans-serif;
-    font-weight:bold;
-    font-size:24px;
-    line-height:20px;
-  }
-
-  @media (min-width: 600px) {
-    #headlinemeasure, #headline {
-      font-size:64px;
-      line-height:60px;
-    }
-    #subheadmeasure, #subhead {
-      font-size:34px;
-      line-height:30px;
-    }
-  }
-
-  #headlinemeasure, 
-  #subheadmeasure {
-  	position:absolute;
-  	opacity:0;
-    text-transform:uppercase;
-  }
-  #headline, 
-  #subhead {
-  	position:relative;
-  }
-  #headline {
-  	text-transform:uppercase;
-    color:#fff;
-  }
-  #subhead {
-  	text-transform:uppercase;
-  	color:#f8bd41;
-  }
-
-  #titles {
-  	width:calc( 100% - 30px );
-  	position:absolute;
-  	top:50%;
-  	left:10px;
-  }
-
-  @media (min-width: 600px) {
-    #titles {
-      left:30px;
-    }
-  }
-
-
-
-
-  #background {
-    position:absolute;
-    top:0;
-    left:0;
-    color:#fff;
-    width:100%;
-    height:100%;
-    padding:0;
-    margin:0; 
-    overflow:hidden;
-/*    background:url('img/blue.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
-  }
-  #slide-image {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;    
-    z-index:5;
-  }
-  #slide-image img {
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
-  #overlay {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;    
-    z-index:10;
-    background:#000;
-    opacity:0.5;
-    transition:0.3s;
-  }
-
-  #menu {
-    position:absolute;
-    width:100%;
-    height:60px;
-    left:0;
-    bottom:0;
-    z-index:1000;
-    overflow:hidden;
-  }
-  .site-logo {
-    position:relative;
-    height:calc( 100% - 20px );
-    margin:10px;
-  }
-  .site-logo img {
-    max-height:100%;
-  }
-  .site-pages {
-    position:absolute;
-    top:0;
-    right:10px;
-    color:#fff;
-    font-family:sans-serif;
-    text-transform:uppercase;
-    font-weight:bold;
-    height:100%;
-  }
-  .site-pages a {
-    padding:21px;
-    display:inline-block;
-  }
-  .site-pages a:hover {
-    color:#f8bd41;
-    cursor:pointer;
-  }
-  #project-next {
-    position:absolute;
-    width:50%;
-    height:100%;
-    top:0;
-    right:0;
-    z-index:999;
-  }
-  #project-previous {
-    position:absolute;
-    width:50%;
-    height:100%;
-    top:0;
-    left:0;
-    z-index:999;
-  }
-  #story-line {
-    position:absolute;
-    width:calc( 100% - 20px);
-    height:2px;
-    top:10px;
-    left:10px;
-    background:transparent;
-    z-index:1000;
-    opacity:0.8;
-  }
-  .story-line-single-fill {
-    background:#fff;
-    height:100%;
-    width:0%;
-  }
-
-
-
-
-
-  </style>
-
-</head>
-
-<body>
-
-<div id="background">
-  <div id="overlay"></div>
-  <div id="slide-image">
-    <img src="img/black.jpg">
-  </div>
-</div>
-
-
-<div class="wrapper">
-	<div id="titles">
-		<div id="headlinemeasure">measure</div>
-		<div id="headline"></div>
-		<div id="subheadmeasure">measure</div>
-		<div id="subhead"></div>
-	</div>
-</div>
-
-
-<div id="menu">
-  <div class="site-logo">
-    <img src="img/logo.png">
-  </div>
-  <div class="site-pages">
-    <a id="page-projects">Projects</a>
-    <a id="page-about">About</a>
-  </div>
-</div>
-
-<div id="project-next"></div>
-<div id="project-previous"></div>
-
-<div id="story-line"></div>
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-<script>
-
 
 
 function removeLines(headline, div, measurediv) {
@@ -311,68 +53,22 @@ function animateLines(div) {
 
 
 function changeBackground(img,img_mobile) {
-  // $('#background').text(img);
-  // $('#background').css("background", "url('" + img + "') no-repeat center center fixed");
-  // $('#slide-image').html('<img src="' + img + '">');
-
 
   var mq = window.matchMedia( "(min-width: 600px)" );
   if (mq.matches) {
-      // $('#slide-image').fadeOut(1000, );
-      // $('#slide-image').html('<img src="' + img + '">');
-      // $('#slide-image').fadeIn(1000);
-
-
-      // $("#slide-image").fadeOut(200, function() {
-      //     $('#slide-image').html('<img src="' + img + '">');
-      // });
-      // $('#slide-image').fadeIn(200);
-
-
-      // $('#slide-image').fadeOut(200);
-      // setTimeout(function(){ 
-      //   $('#slide-image').html('<img src="' + img + '">');
-      // }, 200);
-      // $('#slide-image').fadeIn(200);
-
-
-
-
       $('#overlay').css({opacity: "1"});
       setTimeout(function(){ 
         $('#slide-image').html('<img src="' + img + '">');
       $('#overlay').css({opacity: "0.5"});
       }, 300);
-
-
-
-
   }
   else {
-      // $('#slide-image').html('<img src="' + img_mobile + '">');
-
-      // $("#slide-image").fadeOut(200, function() {
-      //     $('#slide-image').html('<img src="' + img_mobile + '">');
-      // });
-      // $('#slide-image').fadeIn(200);
-
-
       $('#overlay').css({opacity: "1"});
       setTimeout(function(){ 
         $('#slide-image').html('<img src="' + img_mobile + '">');
       $('#overlay').css({opacity: "0.5"});
       }, 300);
-      
-
-
-
   }
-
-
-
-
-
-
 }
 
 
@@ -387,6 +83,7 @@ var headline_array = ["Aberfan & other Shorthand stories", "Damned", "The Wigan 
 var subhead_array = ["Longform stories for Reach regionals made with Shorthand", "Longform website for The Mirror", "Special project website for The Mirror", "Software developed for Reach regionals"];
 var image_array = ["img/aberfan.jpg", "img/damned.jpg", "img/wiganpier.jpg", "img/stories-maker.jpg"];
 var image_array_mobile = ["img/aberfan-mobile.jpg", "img/damned-mobile.jpg", "img/wiganpier-mobile.jpg", "img/stories-maker-mobile.jpg"];
+var link_array = ['projects/aberfan.html', 'projects/damned.html', 'projects/wiganpier.html', 'projects/imagetools.html']
 
 
 
@@ -434,18 +131,57 @@ function animate_storylines(i) {
     $( '#story-' + (x) ).finish();
     $( '#story-' + (x) ).css({width: "0%"});
   }
-
   for (var x = 0; x < i; x++) {
     $( '#story-' + (x) ).css({width: "100%"});
   }
-
   $( '#story-' + (i) ).animate({width: "100%"}, looptime);
 }
+
+
+function close_projects() {
+  $('#panels').css('z-index', '500');
+  $('#about-full').css('top', '100%');
+  $('#projects-full').css('top', '100%');
+  $('#project-full').css('top', '100%');
+  $('#menu').css('background', 'transparent');
+  $('#project-full .full-content').html('');
+}
+
+function open_project(link) {
+  console.log('open project');
+  console.log(link);
+  // load file into project-full div
+  // Move project-full panel up
+  $('#panels').css('z-index', '2000');
+  $('#project-full').css('top', '0%');
+  $('#project-full .full-content').load(link);
+  $('#menu').css('background', '#000');
+}
+
+$("#page-projects").click(function(){
+  close_projects();
+  $('#panels').css('z-index', '2000');
+  console.log('projects page');
+  $('#projects-full').css('top', '0%');
+  $('#menu').css('background', '#000');
+});
+
+$("#page-about").click(function(){
+  close_projects();
+  $('#panels').css('z-index', '2000');
+  console.log('about page');
+  $('#about-full').css('top', '0%');
+  $('#menu').css('background', '#000');
+});
+
+
 
 
 
 function loop_headlines() {
   // console.log(i);
+
+$('#titles').attr('onclick','open_project("' + link_array[i] + '")');
     animate_storylines(i);
     totalprojects = headline_array.length;
     removeLines(headline_array[i], '#headline', '#headlinemeasure');
@@ -478,6 +214,7 @@ $("#project-next").click(function(){
   // console.log(totalprojects);
   clearTimeout(projectloop);
 
+$('#titles').attr('onclick','open_project("' + link_array[i] + '")');
 animate_storylines(i);
   removeLines(headline_array[i], '#headline', '#headlinemeasure');
   removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
@@ -513,6 +250,7 @@ $("#project-previous").click(function(){
       i = totalprojects - 2;
   }
 
+$('#titles').attr('onclick','open_project("' + link_array[i] + '")');
 animate_storylines(i);
   removeLines(headline_array[i], '#headline', '#headlinemeasure');
   removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
@@ -529,20 +267,3 @@ animate_storylines(i);
 
 
 
-
-
-
-$("#page-projects").click(function(){
-  console.log('projects page');
-});
-
-$("#page-about").click(function(){
-  console.log('about page');
-});
-
-
-
-
-</script>
-</body>
-</html>

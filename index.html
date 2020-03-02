@@ -1,55 +1,76 @@
-<!-- http://localhost:81/PORTFOLIO/ -->
-
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <title>Adam Walker Portfolio</title>
-  <meta name="description" content="Adam Walker project poftfolio">
-  <meta name="author" content="Adam Walker">
   <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <link rel="stylesheet" href="css/smoke.css?v=1.0">
-  <style>
-  #newlinedemo {
-  	position:absolute;
-  	z-index:6000;
-  	top:10px;
-  	left:10px;
-  }
-  </style>
+  <title>New line</title>
+
+  <style></style>
 
 </head>
 
 <body>
 
-
-<div id="fs_container" class="fancyslides">
-	<a id="newlinedemo" href="newline.html">Open NewLine Demo</a>
-	<div id="fs_nav_left" class="fs_nav"></div>
-	<div id="fs_nav_right" class="fs_nav"></div>
-	<div id="fs_bg">
-		<div id="fs_words">			
-			<div id="fs_headline"></div>
-			<div id="fs_subhead"></div>
-			<div id="fs_button">
-				Explore the project
-			</div>
-		</div>
-	</div>
+<div id="background">
+  <div id="overlay"></div>
+  <div id="slide-image">
+    <img src="img/black.jpg">
+  </div>
 </div>
 
-<div id="content">
-	<div id="fs_content">
-		This is where the content will load
+
+<div class="wrapper">
+	<div id="titles">
+		<div id="headlinemeasure">measure</div>
+		<div id="headline"></div>
+		<div id="subheadmeasure">measure</div>
+		<div id="subhead"></div>
 	</div>
 </div>
 
 
+<div id="menu">
+  <div onclick="close_projects()" class="site-logo">
+    <img src="img/logo.png">
+  </div>
+  <div class="site-pages">
+    <a id="page-projects">Projects</a>
+    <a id="page-about">About</a>
+  </div>
+</div>
+
+<div id="project-next"></div>
+<div id="project-previous"></div>
+
+<div id="story-line"></div>
+
+<div id="panels">
+  <div id="project-full"><div class="full-content"></div></div>
+  <div id="projects-full">
+    <div class="full-content">
+      Projects page
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>
+  <div id="about-full">
+    <div class="full-content">
+      About page
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>
+</div>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/mirrors.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="js/script.js"></script>
 </body>
 </html>
