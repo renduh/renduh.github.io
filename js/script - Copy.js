@@ -1,75 +1,3 @@
-// Slide content here
-var slideinfo = {
-                   "fancyslides":[
-                      {
-                         "headline":"Aberfan & other Shorthand stories",
-                         "subhead":"Longform stories for Reach regionals made with Shorthand",
-                         "image":"img/aberfan.jpg",
-                         "image_mobile":"img/aberfan-mobile.jpg",
-                         "link":"projects/aberfan.html"
-                      },
-                      {
-                         "headline":"Damned",
-                         "subhead":"Longform website for The Mirror",
-                         "image":"img/damned.jpg",
-                         "image_mobile":"img/damned-mobile.jpg",
-                         "link":"projects/damned.html"
-                      },
-                      {
-                         "headline":"The Wigan Pier Project",
-                         "subhead":"Special project website for The Mirror",
-                         "image":"img/wiganpier.jpg",
-                         "image_mobile":"img/wiganpier-mobile.jpg",
-                         "link":"projects/wiganpier.html"
-                      },
-                      {
-                         "headline":"Image maker tools",
-                         "subhead":"Software developed for Reach regionals",
-                         "image":"img/stories-maker.jpg",
-                         "image_mobile":"img/stories-maker-mobile.jpg",
-                         "link":"projects/imagetools.html"
-                      }
-                   ]
-                }
-
-// Push content into arrays
-var headline_array = [];
-for (var i = 0; i < slideinfo.fancyslides.length; i++) {
-  headline_array.push(slideinfo.fancyslides[i].headline);
-}
-var subhead_array = [];
-for (var i = 0; i < slideinfo.fancyslides.length; i++) {
-  subhead_array.push(slideinfo.fancyslides[i].subhead);
-}
-var image_array = [];
-for (var i = 0; i < slideinfo.fancyslides.length; i++) {
-  image_array.push(slideinfo.fancyslides[i].image);
-}
-var image_array_mobile = [];
-for (var i = 0; i < slideinfo.fancyslides.length; i++) {
-  image_array_mobile.push(slideinfo.fancyslides[i].image_mobile);
-}
-var link_array = [];
-for (var i = 0; i < slideinfo.fancyslides.length; i++) {
-  link_array.push(slideinfo.fancyslides[i].link);
-}
-
-// var headline_array = ["Aberfan & other Shorthand stories", "Damned", "The Wigan Pier Project", "Image maker tools"];
-// var subhead_array = ["Longform stories for Reach regionals made with Shorthand", "Longform website for The Mirror", "Special project website for The Mirror", "Software developed for Reach regionals"];
-// var image_array = ["img/aberfan.jpg", "img/damned.jpg", "img/wiganpier.jpg", "img/stories-maker.jpg"];
-// var image_array_mobile = ["img/aberfan-mobile.jpg", "img/damned-mobile.jpg", "img/wiganpier-mobile.jpg", "img/stories-maker-mobile.jpg"];
-// var link_array = ['projects/aberfan.html', 'projects/damned.html', 'projects/wiganpier.html', 'projects/imagetools.html']
-
-
-
-
-
-
-
-
-
-
-
 
 
 function removeLines(headline, div, measurediv) {
@@ -148,6 +76,20 @@ function changeBackground(img,img_mobile) {
 
 
 
+
+
+
+var headline_array = ["Aberfan & other Shorthand stories", "Damned", "The Wigan Pier Project", "Image maker tools"];
+var subhead_array = ["Longform stories for Reach regionals made with Shorthand", "Longform website for The Mirror", "Special project website for The Mirror", "Software developed for Reach regionals"];
+var image_array = ["img/aberfan.jpg", "img/damned.jpg", "img/wiganpier.jpg", "img/stories-maker.jpg"];
+var image_array_mobile = ["img/aberfan-mobile.jpg", "img/damned-mobile.jpg", "img/wiganpier-mobile.jpg", "img/stories-maker-mobile.jpg"];
+var link_array = ['projects/aberfan.html', 'projects/damned.html', 'projects/wiganpier.html', 'projects/imagetools.html']
+
+
+
+
+
+
 var i;
 var totalprojects;
 var projectloop;
@@ -185,7 +127,7 @@ function add_storylines() {
 function animate_storylines(i) {
   var totalprojects = headline_array.length;
   for (var x = 0; x < totalprojects; x++) {
-    // console.log(x);
+    console.log(x);
     $( '#story-' + (x) ).finish();
     $( '#story-' + (x) ).css({width: "0%"});
   }
@@ -206,8 +148,8 @@ function close_projects() {
 }
 
 function open_project(link) {
-  // console.log('open project');
-  // console.log(link);
+  console.log('open project');
+  console.log(link);
   // load file into project-full div
   // Move project-full panel up
   $('#panels').css('z-index', '2000');
@@ -219,7 +161,7 @@ function open_project(link) {
 $("#page-projects").click(function(){
   close_projects();
   $('#panels').css('z-index', '2000');
-  // console.log('projects page');
+  console.log('projects page');
   $('#projects-full').css('top', '0%');
   $('#menu').css('background', '#000');
 });
@@ -227,7 +169,7 @@ $("#page-projects").click(function(){
 $("#page-about").click(function(){
   close_projects();
   $('#panels').css('z-index', '2000');
-  // console.log('about page');
+  console.log('about page');
   $('#about-full').css('top', '0%');
   $('#menu').css('background', '#000');
 });
@@ -254,8 +196,22 @@ $('#titles').attr('onclick','open_project("' + link_array[i] + '")');
 }
 
 
+// function animationLoop() {
+//   // animation-related code
+
+//   requestAnimationFrame(animationLoop)
+// }
+
+// // start off our animation loop!
+// animationLoop();
+
+
+
 
 $("#project-next").click(function(){
+  // console.log('next project');
+  // console.log(i);
+  // console.log(totalprojects);
   clearTimeout(projectloop);
 
 $('#titles').attr('onclick','open_project("' + link_array[i] + '")');
@@ -269,7 +225,7 @@ animate_storylines(i);
     i = 0;
     projectloop = setTimeout(loop_headlines, looptime);
   }
-  // console.log(i);
+  console.log(i);
 
 });
 
@@ -277,8 +233,14 @@ animate_storylines(i);
 
 
 $("#project-previous").click(function(){
+  // console.log('previous project');
+  // console.log(i);
   clearTimeout(projectloop);
+
+
   i = i - 2; 
+  console.log(i);
+
   // if it is on the first slide loop through to last slide
   if ( i == -1 ) {
       i = totalprojects - 1;
