@@ -233,14 +233,32 @@ $("#page-about").click(function(){
 });
 
 
+function exploreanimation() {
+  // $('#exploreproject').animate({top: "-40px"}, 300, 'linear');
+  // setTimeout(function(){ 
+  //   $('#exploreproject').css('top', '30px');
+  //   $('#exploreproject').animate({top: "0px"}, 300, 'linear');
+  // }, 400);
+  $('#exploreproject').css('top', '-40px');
+  setTimeout(function(){ 
+    $('#exploreproject').css('transition', 'none');
+    $('#exploreproject').css('top', '33px');
+  }, 200);
+  setTimeout(function(){ 
+    $('#exploreproject').css('transition', '0.2s');
+    $('#exploreproject').css('top', '0px');
+  }, 400);
+}
+
 
 
 
 function loop_headlines() {
   // console.log(i);
 
-$('#titles').attr('onclick','open_project("' + link_array[i] + '")');
+$('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
     animate_storylines(i);
+    exploreanimation();
     totalprojects = headline_array.length;
     removeLines(headline_array[i], '#headline', '#headlinemeasure');
     removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
@@ -258,8 +276,9 @@ $('#titles').attr('onclick','open_project("' + link_array[i] + '")');
 $("#project-next").click(function(){
   clearTimeout(projectloop);
 
-$('#titles').attr('onclick','open_project("' + link_array[i] + '")');
-animate_storylines(i);
+$('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
+  animate_storylines(i);
+  exploreanimation();
   removeLines(headline_array[i], '#headline', '#headlinemeasure');
   removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
   changeBackground(image_array[i],image_array_mobile[i]);
@@ -288,8 +307,9 @@ $("#project-previous").click(function(){
       i = totalprojects - 2;
   }
 
-$('#titles').attr('onclick','open_project("' + link_array[i] + '")');
+$('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
 animate_storylines(i);
+  exploreanimation();
   removeLines(headline_array[i], '#headline', '#headlinemeasure');
   removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
   changeBackground(image_array[i],image_array_mobile[i]);

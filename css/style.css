@@ -79,7 +79,6 @@
   	top:50%;
   	left:10px;
     z-index:1001;
-    cursor:pointer;
   }
 
   @media (min-width: 600px) {
@@ -271,3 +270,32 @@
   }
 
 
+#exploreproject-wrapper {
+  position: relative;
+  display: block;
+  margin: 10px 10px 15px 10px;
+  height: 31px;
+  overflow: hidden;
+}
+
+#exploreproject {
+  position: absolute;
+  display: inline-block;
+  background: #f8bd41;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  top: 0px;
+  transition:0.2s;
+  cursor:pointer;
+}
+
+@media (min-width: 600px) {
+  #exploreproject {
+    font-size: 20px;
+  }  
+}
