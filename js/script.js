@@ -3,31 +3,31 @@ var slideinfo = {
                    "fancyslides":[
                       {
                          "headline":"Aberfan & other Shorthand stories",
-                         "subhead":"Longform stories for Reach regionals made with Shorthand",
-                         "image":"img/aberfan.jpg",
-                         "image_mobile":"img/aberfan-mobile.jpg",
-                         "link":"projects/aberfan.html"
+                         "subhead":"Longform stories for Reach regionals",
+                         "image":"projects/aberfan.jpg",
+                         "image_mobile":"projects/aberfan-mobile.jpg",
+                         "link":"projects/aberfan/index.html"
                       },
                       {
                          "headline":"Damned",
                          "subhead":"Longform website for The Mirror",
-                         "image":"img/damned.jpg",
-                         "image_mobile":"img/damned-mobile.jpg",
-                         "link":"projects/damned.html"
+                         "image":"projects/damned.jpg",
+                         "image_mobile":"projects/damned-mobile.jpg",
+                         "link":"projects/damned/index.html"
                       },
                       {
                          "headline":"The Wigan Pier Project",
                          "subhead":"Special project website for The Mirror",
-                         "image":"img/wiganpier.jpg",
-                         "image_mobile":"img/wiganpier-mobile.jpg",
-                         "link":"projects/wiganpier.html"
+                         "image":"projects/wiganpier.jpg",
+                         "image_mobile":"projects/wiganpier-mobile.jpg",
+                         "link":"projects/wiganpier/index.html"
                       },
                       {
                          "headline":"Image maker tools",
                          "subhead":"Software developed for Reach regionals",
-                         "image":"img/stories-maker.jpg",
-                         "image_mobile":"img/stories-maker-mobile.jpg",
-                         "link":"projects/imagetools.html"
+                         "image":"projects/stories-maker.jpg",
+                         "image_mobile":"projects/stories-maker-mobile.jpg",
+                         "link":"projects/imagetools/index.html"
                       }
                    ]
                 }
