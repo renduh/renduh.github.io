@@ -79,6 +79,7 @@
   	top:50%;
   	left:10px;
     z-index:1001;
+    pointer-events: none;
   }
 
   @media (min-width: 600px) {
@@ -292,6 +293,7 @@
   top: 40px;
   transition:0.2s;
   cursor:pointer;
+  pointer-events: auto;
 }
 
 @media (min-width: 600px) {
