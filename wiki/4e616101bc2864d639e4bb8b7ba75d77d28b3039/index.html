@@ -175,6 +175,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>After Effects - bounch</li>
+
 <li>After Effects - increasing numbers</li>
 
 <li>photo test</li>
@@ -9602,7 +9604,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200618142446723" list="[[After Effects - increasing numbers]] [[this is a third test]] [[photo test]] GettingStarted $:/ControlPanel" modified="20200618142457033" title="$:/StoryList">
+<div created="20200618145343856" list="[[After Effects - bounch]] [[After Effects - increasing numbers]] GettingStarted" modified="20200618145343856" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9777,6 +9779,34 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20200618145402627" modified="20200618145420021" tags="[[after effects]]" title="After Effects - bounch">
+<pre>After Effects Bounce expressions (ALT click on position or whatever stopwatch)
+
+Inertial Bounce (Created by Dan Ebberts at motionscript.com)
+
+n = 0;
+if (numKeys &gt; 0){
+n = nearestKey(time).index;
+if (key(n).time &gt; time){
+n--;
+}
+}
+if (n == 0){
+t = 0;
+}else{
+t = time - key(n).time;
+}
+if (n &gt; 0 &amp;&amp; t &lt; 1){
+v = velocityAtTime(key(n).time - thisComp.frameDuration/10);
+amp = .05;
+freq = 4.0;
+decay = 8.0;
+value + v*amp*Math.sin(freq*t*2*Math.PI)/Math.exp(decay*t);
+}else{
+value;
+}
+</pre>
 </div>
 <div created="20200618142741309" modified="20200618142833692" tags="[[after effects]]" title="After Effects - increasing numbers">
 <pre>After Effects
