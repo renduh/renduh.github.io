@@ -167,11 +167,15 @@ Error message and password prompt
 
 <li>$:/temp/info-plugin</li>
 
+<li>$:/temp/NewTagName</li>
+
 <li>$:/temp/search</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>After Effects - increasing numbers</li>
 
 <li>photo test</li>
 
@@ -9598,7 +9602,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200618142446723" list="[[this is a third test]] [[photo test]] GettingStarted $:/ControlPanel" modified="20200618142457033" title="$:/StoryList">
+<div created="20200618142446723" list="[[After Effects - increasing numbers]] [[this is a third test]] [[photo test]] GettingStarted $:/ControlPanel" modified="20200618142457033" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9658,6 +9662,9 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20200618142823454" modified="20200618142823454" title="$:/temp/NewTagName">
+<pre></pre>
 </div>
 <div created="20200618141642120" modified="20200618141642589" title="$:/temp/search">
 <pre>phot</pre>
@@ -9770,6 +9777,27 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20200618142741309" modified="20200618142833692" tags="[[after effects]]" title="After Effects - increasing numbers">
+<pre>After Effects
+
+so you just want a number to count up from 2000 to 2060 between two points in time?
+Make a solid. Apply effect Text-&gt;Numbers . Choose a font. Then keyframe the setting Value/Offset/Random Max and set it to 2000. Then go to the point in the timeline where it will be 2060 ... and set the same setting to 2060. 
+Set decimal places to 0.
+
+Expression for numbers larger than 30,000 - with comma
+Add code to Text &gt; Source Text ---- alt click on timer icon
+
+beginNum = 0;//Beginning number of counter
+endNum = 70000;//Ending number of counter
+duration = 3;//duration of count down in seconds
+s = &quot;&quot; + Math.round( linear(time, 0, duration, beginNum, endNum) )
+if (s.length &gt; 3){
+s.substr(0, s.length -3) + &quot;,&quot; + s.substr(-3);
+}else{
+s
+}
+</pre>
 </div>
 <div created="20200618141145772" modified="20200618141159014" tags="" title="photo test">
 <pre>[img[https://pbs.twimg.com/media/EayrqzwWoAAjjHp?format=jpg&amp;name=4096x4096]]</pre>
