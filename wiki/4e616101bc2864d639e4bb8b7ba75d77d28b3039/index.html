@@ -175,6 +175,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>After Effects - bounce back</li>
+
 <li>After Effects - bounch</li>
 
 <li>After Effects - increasing numbers</li>
@@ -9604,7 +9606,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20200618145343856" list="[[After Effects - bounch]] [[After Effects - increasing numbers]] GettingStarted" modified="20200618145343856" title="$:/StoryList">
+<div created="20200618145343856" list="[[After Effects - bounce back]] [[After Effects - bounch]] [[After Effects - increasing numbers]] GettingStarted" modified="20200618145343856" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -9780,6 +9782,51 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20200618145610731" modified="20200618145639484" tags="[[after effects]]" title="After Effects - bounce back">
+<pre>Bounce Back (Created by Dan Ebberts at motionscript.com)
+
+
+```
+e = .7;
+g = 5000;
+nMax = 9;
+n = 0;
+if (numKeys &gt; 0){
+ n = nearestKey(time).index;
+ if (key(n).time &gt; time) n--;
+}
+if (n &gt; 0){
+ t = time - key(n).time;
+ v = -velocityAtTime(key(n).time - .001)*e;
+ vl = length(v);
+ if (value instanceof Array){
+   vu = (vl &gt; 0) ? normalize(v) : [0,0,0];
+ }else{
+   vu = (v &lt; 0) ? -1 : 1;
+ }
+ tCur = 0;
+ segDur = 2*vl/g;
+ tNext = segDur;
+ nb = 1; // number of bounces
+ while (tNext &lt; t &amp;&amp; nb &lt;= nMax){
+   vl *= e;
+   segDur *= e;
+   tCur = tNext;
+   tNext += segDur;
+   nb++
+ }
+ if(nb &lt;= nMax){
+   delta = t - tCur;
+   value +  vu*delta*(vl - g*delta/2);
+ }else{
+   value
+ }
+}else
+ value
+
+```
+</pre>
+</div>
 <div created="20200618145402627" modified="20200618145556445" tags="[[after effects]]" title="After Effects - bounch">
 <pre>After Effects Bounce expressions (ALT click on position or whatever stopwatch)
 
@@ -9812,7 +9859,7 @@ value;
 
 </pre>
 </div>
-<div created="20200618142741309" modified="20200618142833692" tags="[[after effects]]" title="After Effects - increasing numbers">
+<div created="20200618142741309" modified="20200618145607973" tags="[[after effects]]" title="After Effects - increasing numbers">
 <pre>After Effects
 
 so you just want a number to count up from 2000 to 2060 between two points in time?
@@ -9822,6 +9869,8 @@ Set decimal places to 0.
 Expression for numbers larger than 30,000 - with comma
 Add code to Text &gt; Source Text ---- alt click on timer icon
 
+
+```
 beginNum = 0;//Beginning number of counter
 endNum = 70000;//Ending number of counter
 duration = 3;//duration of count down in seconds
@@ -9831,6 +9880,8 @@ s.substr(0, s.length -3) + &quot;,&quot; + s.substr(-3);
 }else{
 s
 }
+```
+
 </pre>
 </div>
 <div created="20200618141145772" modified="20200618141159014" tags="" title="photo test">
