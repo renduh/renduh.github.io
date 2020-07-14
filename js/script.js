@@ -198,10 +198,10 @@ function animate_storylines(i) {
 
 function close_projects() {
   $('#panels').css('z-index', '500');
-  $('#about-full').css('top', '100%');
-  $('#projects-full').css('top', '100%');
-  $('#project-full').css('left', '100%');
-  $('#menu').css('background', 'transparent');
+  // $('#about-full').css('top', '100%');
+  // $('#projects-full').css('top', '100%');
+  $('#project-full').css('top', '100%');
+  // $('#menu').css('background', 'transparent');
   $('#project-full .full-content').html('');
 }
 
@@ -211,26 +211,26 @@ function open_project(link) {
   // load file into project-full div
   // Move project-full panel up
   $('#panels').css('z-index', '2000');
-  $('#project-full').css('left', '0%');
+  $('#project-full').css('top', '0%');
   $('#project-full .full-content').load(link);
-  $('#menu').css('background', '#000');
+  // $('#menu').css('background', '#000');
 }
 
-$("#page-projects").click(function(){
-  close_projects();
-  $('#panels').css('z-index', '2000');
-  // console.log('projects page');
-  $('#projects-full').css('top', '0%');
-  $('#menu').css('background', '#000');
-});
+// $("#page-projects").click(function(){
+//   close_projects();
+//   $('#panels').css('z-index', '2000');
+//   // console.log('projects page');
+//   $('#projects-full').css('top', '0%');
+//   $('#menu').css('background', '#000');
+// });
 
-$("#page-about").click(function(){
-  close_projects();
-  $('#panels').css('z-index', '2000');
-  // console.log('about page');
-  $('#about-full').css('top', '0%');
-  $('#menu').css('background', '#000');
-});
+// $("#page-about").click(function(){
+//   close_projects();
+//   $('#panels').css('z-index', '2000');
+//   // console.log('about page');
+//   $('#about-full').css('top', '0%');
+//   $('#menu').css('background', '#000');
+// });
 
 
 function exploreanimation() {
