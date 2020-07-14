@@ -161,7 +161,7 @@
   }
   .site-pages a {
     font-family: 'Roboto', sans-serif;
-    padding:21px;
+    padding:21px 10px;
     display:inline-block;
     color:#fff;
   }
@@ -238,10 +238,29 @@
     /*height: calc( 100% - 60px );*/
     height: 100%;
     overflow: auto;
-    padding: 20px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
   }
   .full-project-header {
-    position:fixed;
+    position:sticky;
+    left:0;
+    top:0;
+    width: 100%;
+    background:#000;
+    z-index:1000;
+  }
+  .project-page-logo {
+    height:40px;
+    width:auto!important;
+    margin:10px;
+  }
+  .close-current-project {
+    float:right;
+  }
+  .close-current-project img {
+    height: 40px;
+    width: auto!important;
+    margin: 10px 25px;
+    cursor:pointer;
   }
 
 
