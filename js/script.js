@@ -196,13 +196,27 @@ function animate_storylines(i) {
 }
 
 
+function stopanimation() {
+  clearTimeout(projectloop);
+}
+
+function startanimation() {
+  loop_headlines();
+}
+
+
 function close_projects() {
-  $('#panels').css('z-index', '500');
   // $('#about-full').css('top', '100%');
   // $('#projects-full').css('top', '100%');
-  $('#project-full').css('top', '100%');
+  $('#project-full').css('left', '100%');
   // $('#menu').css('background', 'transparent');
   $('#project-full .full-content').html('');
+  setTimeout(function(){ 
+    $('#panels').css('z-index', '500');
+  }, 200);
+  setTimeout(function(){ 
+    startanimation();
+  }, 400);
 }
 
 function open_project(link) {
@@ -211,26 +225,30 @@ function open_project(link) {
   // load file into project-full div
   // Move project-full panel up
   $('#panels').css('z-index', '2000');
-  $('#project-full').css('top', '0%');
+  $('#project-full').css('left', '0%');
   $('#project-full .full-content').load(link);
+
+  $('#projects-full').css('left', '100%');
+  $('#about-full').css('left', '100%');
   // $('#menu').css('background', '#000');
+  stopanimation();
 }
 
-// $("#page-projects").click(function(){
-//   close_projects();
-//   $('#panels').css('z-index', '2000');
-//   // console.log('projects page');
-//   $('#projects-full').css('top', '0%');
-//   $('#menu').css('background', '#000');
-// });
+$("#page-projects").click(function(){
+  // close_projects();
+  $('#panels').css('z-index', '2000');
+  // console.log('projects page');
+  $('#projects-full').css('left', '0%');
+  // $('#menu').css('background', '#000');
+});
 
-// $("#page-about").click(function(){
-//   close_projects();
-//   $('#panels').css('z-index', '2000');
-//   // console.log('about page');
-//   $('#about-full').css('top', '0%');
-//   $('#menu').css('background', '#000');
-// });
+$("#page-about").click(function(){
+  // close_projects();
+  $('#panels').css('z-index', '2000');
+  // console.log('about page');
+  $('#about-full').css('left', '0%');
+  // $('#menu').css('background', '#000');
+});
 
 
 function exploreanimation() {
@@ -250,13 +268,19 @@ function exploreanimation() {
   }, 400);
 }
 
+$(".close-projects-full").click(function(){
+  $('#projects-full').css('left', '100%');
+  $('#about-full').css('left', '100%');
+  setTimeout(function(){ 
+    $('#panels').css('z-index', '500');
+  }, 200);
+});
 
 
 
 function loop_headlines() {
-  // console.log(i);
-
-$('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
+    // console.log(i);
+    $('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
     animate_storylines(i);
     exploreanimation();
     totalprojects = headline_array.length;
@@ -273,23 +297,11 @@ $('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
 
 
 
+
+
 $("#project-next").click(function(){
   clearTimeout(projectloop);
-
-$('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
-  animate_storylines(i);
-  exploreanimation();
-  removeLines(headline_array[i], '#headline', '#headlinemeasure');
-  removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
-  changeBackground(image_array[i],image_array_mobile[i]);
-  if (++i < headline_array.length) {
-      projectloop = setTimeout(loop_headlines, looptime);
-  } else {
-    i = 0;
-    projectloop = setTimeout(loop_headlines, looptime);
-  }
-  // console.log(i);
-
+  loop_headlines();
 });
 
 
@@ -306,21 +318,7 @@ $("#project-previous").click(function(){
   if ( i == -2) {
       i = totalprojects - 2;
   }
-
-$('#exploreproject').attr('onclick','open_project("' + link_array[i] + '")');
-animate_storylines(i);
-  exploreanimation();
-  removeLines(headline_array[i], '#headline', '#headlinemeasure');
-  removeLines(subhead_array[i], '#subhead', '#subheadmeasure');
-  changeBackground(image_array[i],image_array_mobile[i]);
-
-  if (++i < headline_array.length) {
-      projectloop = setTimeout(loop_headlines, looptime);
-  } else {
-    i = 0;
-    projectloop = setTimeout(loop_headlines, looptime);
-  }
-
+  loop_headlines();
 });
 
 
