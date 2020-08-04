@@ -157,7 +157,35 @@ $( document ).ready(function() {
 	i = 0;
   add_storylines();
   loop_headlines();
+  $('#loading-logo').css({opacity: "100%"});
+  setTimeout(function(){ 
+    $('#loading-logo').css({opacity: "0%"});
+    setTimeout(function(){ 
+      $('#opener-top').css({height: "0%"});
+      $('#opener-bottom').css({height: "0%"});      
+    }, 400);
+  }, 1000);
+  load_projects_full();
 });
+
+
+
+function load_projects_full() {
+  console.log('load projects full');
+
+  for (x = 0; x < headline_array.length; x++) {
+    $('<div/>', {
+        class: 'projects-full-cards',
+        html: '<img src="' + image_array[x] + '"><h1>' + headline_array[x] + '</h1><h2>' + subhead_array[x] + '</h2><div>' + link_array[x] + '</div>',
+        css: {
+          position:'relative'
+        }
+    }).appendTo('#projects-full-cards');
+  }
+
+
+}
+
 
 
 
