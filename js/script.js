@@ -176,7 +176,9 @@ function load_projects_full() {
   for (x = 0; x < headline_array.length; x++) {
     $('<div/>', {
         class: 'projects-full-cards',
-        html: '<img src="' + image_array[x] + '"><h1>' + headline_array[x] + '</h1><h2>' + subhead_array[x] + '</h2><div>' + link_array[x] + '</div>',
+        onclick: 'open_project("' + link_array[x] + '")',
+        // html: '<img src="' + image_array[x] + '"><h1>' + headline_array[x] + '</h1><h2>' + subhead_array[x] + '</h2><div>' + link_array[x] + '</div>',
+        html: '<h1>' + headline_array[x] + '</h1><h2>' + subhead_array[x] + '</h2>',
         css: {
           position:'relative'
         }
